@@ -1,5 +1,12 @@
 <h1>All Creameries</h1>
 
 <% @creameries.each do |creamery| %>
-    <h3><%= creamery %></h3>
+    <h3><%= creamery.name %></h3>
+    <h3><%= creamery.date_founded %></h3>
+    <h3><%= creamery.owner %></h3>
+    <h3><%= creamery.head_cheesemaker %></h3>
+    <h3><%= creamery.location %></h3>
+    <h3><%= creamery.farmstead %></h3>
+    <h3><%= creamery.acreage %></h3>
+    <h3><%= creamery.awards_won %></h3>
 <% end %>

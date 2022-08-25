@@ -1,0 +1,2 @@
+class Creamery < ApplicationRecord
+end

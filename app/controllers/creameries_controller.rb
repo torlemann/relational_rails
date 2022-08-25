@@ -1,6 +1,6 @@
 class CreameriesController < ApplicationController
     def index
-        @creameries = ['Creamery 1', 'Creamery 2', 'Creamery 3']
+        @creameries = Creamery.all
     end
 
     def new
@@ -13,7 +13,7 @@ class CreameriesController < ApplicationController
             owner: params[:creamery][:owner]
             head_cheesemaker: params[:creamery][:head_cheesemaker]
             location: params[:creamery][:location]
-            farmstead?: params[:creamery][:farmstead?]
+            farmstead: params[:creamery][:farmstead]
             acreage: params[:creamery][:acreage]
             awards_won: params[:creamery][:awards_won]
         })
