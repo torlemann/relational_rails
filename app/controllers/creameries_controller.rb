@@ -46,4 +46,9 @@ class CreameriesController < ApplicationController
         task.save
         redirect_to "/creameries/#{creamery.id}"
     end
+
+    def destroy
+        Creamery.destroy(params[:id])
+        redirect_to '/creameries'
+    end
 end
