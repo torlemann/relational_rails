@@ -1,0 +1,14 @@
+<form action="/creameries/<%= @creamery.id %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="PATCH" />
+    <p>Edit the creamery's attributes:</p>
+    <input type='text' name='creamery[name]' value='<%= @creamery.name %>'/><br/>
+    <input type='text' name='creamery[date_founded]' value='<%= @creamery.date_founded %>'/><br/>
+    <input type='text' name='creamery[owner]' value='<%= @creamery.owner %>'/><br/>
+    <input type='text' name='creamery[head_cheesemaker]' value='<%= @creamery.head_cheesemaker %>'/><br/>
+    <input type='text' name='creamery[location]' value='<%= @creamery.location %>'/><br/>
+    <input type='text' name='creamery[farmstead]' value='<%= @creamery.farmstead %>'/><br/>
+    <input type='text' name='creamery[acreage]' value='<%= @creamery.acreage %>'/><br/>
+    <textarea name='creamery[awards_won]'><%= @creamery.awards_won %></textarea><br/>
+    <input type='submit'/>
+</form>

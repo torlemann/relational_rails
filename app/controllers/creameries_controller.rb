@@ -26,4 +26,8 @@ class CreameriesController < ApplicationController
     def show
         @creamery = Creamery.find(params[:id])
     end
+
+    def edit
+        @creamery = Creamery.find(params[:id])
+    end
 end
