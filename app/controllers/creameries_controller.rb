@@ -22,4 +22,7 @@ class CreameriesController < ApplicationController
 
         redirect_to'/creameries'
     end
+
+    def show
+    end
 end

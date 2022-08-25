@@ -1,7 +1,7 @@
 <h1>All Creameries</h1>
 
 <% @creameries.each do |creamery| %>
-    <h3><%= creamery.name %></h3>
+    <h3><a href="/creameries/<%= creamery.id %>"><%= creamery.name %></a></h3>
     <h3><%= creamery.date_founded %></h3>
     <h3><%= creamery.owner %></h3>
     <h3><%= creamery.head_cheesemaker %></h3>

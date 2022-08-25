@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/creameries', to: 'creameries#index'
   get '/creameries/new', to: 'creameries#new'
   post '/creameries', to: 'creameries#create'
+  get '/creameries/:id', to: 'creameries#show' 
 end
