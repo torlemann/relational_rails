@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/creameries/new', to: 'creameries#new'
   post '/creameries', to: 'creameries#create'
   get '/creameries/:id', to: 'creameries#show'
-  get '/creameries/:id/edit', to: 'creameries#edit' 
+  get '/creameries/:id/edit', to: 'creameries#edit'
+  patch '/tasks/:id', to: 'tasks#update' 
 end
