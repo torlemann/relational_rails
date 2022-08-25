@@ -1,13 +1,20 @@
 <a href="/creameries">Creamery Index</a>
 
-<h1><%= @creamery.name %></h1>
-
-<h1><%= @creamery.date_founded %></h1>
-<h1><%= @creamery.owner %></h1>
-<h1><%= @creamery.head_cheesemaker %></h1>
-<h1><%= @creamery.location %></h1>
-<h1><%= @creamery.farmstead %></h1>
-<h1><%= @creamery.acreage %></h1>
-<h1><%= @creamery.awards_won %></h1>
+<h3>Name:</h3>
+<p><%= @creamery.name %></p>
+<h3>Year Founded:</h3>
+<p><%= @creamery.date_founded %></p>
+<h3>Owner(s)/Founder(s)</h3>
+<p><%= @creamery.owner %></p>
+<h3>Head Cheesemaker</h3>
+<p><%= @creamery.head_cheesemaker %></p>
+<h3>Location:</h3>
+<p><%= @creamery.location %></p>
+<h3>Farmstead?</h3>
+<p><%= @creamery.farmstead %></p>
+<h3>Acreage:</h3>
+<p><%= @creamery.acreage %></p>
+<h3>Awards:</h3>
+<p><%= @creamery.awards_won %></p>
 
 <a href='/creameries/<% @creamery.id %>/edit'>Edit</a>

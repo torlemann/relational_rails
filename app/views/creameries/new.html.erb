@@ -1,13 +1,21 @@
 <form action="/creameries" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p>Add a creamery to the database:</p>
+    <h3>Add a creamery to the database:</h3>
+    <p>Name:</p>
     <input type='text' name='creamery[name]'/><br/>
+    <p>Date founded (DDMMYYYY):</p>
     <input type='text' name='creamery[date_founded]'/><br/>
+    <p>Owners/Founders:</p>
     <input type='text' name='creamery[owner]'/><br/>
+    <p>Head Cheesemaker:</p>
     <input type='text' name='creamery[head_cheesemaker]'/><br/>
+    <p>Location (State):</p>
     <input type='text' name='creamery[location]'/><br/>
+    <p>Is this a farmstead operation?</p>
     <input type='text' name='creamery[farmstead]'/><br/>
+    <p>Acreage (if the creamery is a farmstead operation)</p>
     <input type='text' name='creamery[acreage]'/><br/>
+    <p>Awards won:</p>
     <textarea name='creamery[awards_won]'></textarea><br/>
     <input type='submit'/>
 </form>

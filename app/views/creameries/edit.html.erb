@@ -1,14 +1,22 @@
 <form action="/creameries/<%= @creamery.id %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="_method" value="PATCH" />
-    <p>Edit the creamery's attributes:</p>
+    <h3>Edit the creamery's attributes:</h3><br>
+    <p>Name:</p>
     <input type='text' name='creamery[name]' value='<%= @creamery.name %>'/><br/>
+    <p>Year founded:</p>
     <input type='text' name='creamery[date_founded]' value='<%= @creamery.date_founded %>'/><br/>
+    <p>Owner/Founder:</p>
     <input type='text' name='creamery[owner]' value='<%= @creamery.owner %>'/><br/>
+    <p>Head Cheesemaker:</p>
     <input type='text' name='creamery[head_cheesemaker]' value='<%= @creamery.head_cheesemaker %>'/><br/>
+    <p>Location (State):</p>
     <input type='text' name='creamery[location]' value='<%= @creamery.location %>'/><br/>
+    <p>Is this a farmstead operation?</p>
     <input type='text' name='creamery[farmstead]' value='<%= @creamery.farmstead %>'/><br/>
+    <p>Acreage (if the creamery is a farmstead operation)</p>
     <input type='text' name='creamery[acreage]' value='<%= @creamery.acreage %>'/><br/>
+    <p>Awards won:</p>
     <textarea name='creamery[awards_won]'><%= @creamery.awards_won %></textarea><br/>
     <input type='submit'/>
 </form>
