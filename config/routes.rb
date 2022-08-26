@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   get '/creameries/:id', to: 'creameries#show'
   get '/creameries/:id/edit', to: 'creameries#edit'
   patch '/creameries/:id', to: 'creameries#update'
-  delete '/creameries/:id', to: 'creameries#destroy' 
+  delete '/creameries/:id', to: 'creameries#destroy'
+  
+  get '/cheeses', to: 'cheeses#index'
+  get '/cheeses/:id', to: 'cheeses#show'
 end

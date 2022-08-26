@@ -1,5 +1,3 @@
 class Creamery < ApplicationRecord
-    def creamery?
-        return true if name.downcase.include? 'creamery'
-    end
+    has_many :cheeses
 end
