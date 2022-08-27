@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the creameries index page' do
+RSpec.describe Creamery, type: :feature do
     it 'displays the names of all creameries' do
         creamery = Creamery.create!(name: "Jasper Hill Farm", date_founded: 2000, owner: "Mateo and Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
         creamery2 = Creamery.create!(name: "Test 2 Name", date_founded: 2010, owner: "Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
