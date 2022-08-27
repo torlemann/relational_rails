@@ -6,7 +6,7 @@ RSpec.describe Creamery, type: :feature do
         #creamery2 = Creamery.create!(name: "Test 2 Name", date_founded: 2010, owner: "Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
         #creamery3 = Creamery.create!(name: "Test 3 Name", date_founded: 2015, owner: "Mateo", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
 
-        visit "/creameries/:id"
+        visit "/creameries/#{creamery.id}"
 
         expect(page).to have_content(creamery.name)
         expect(page).to have_content(creamery.date_founded)
