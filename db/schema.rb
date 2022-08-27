@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_234624) do
+ActiveRecord::Schema.define(version: 2022_08_26_010357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cheeses", force: :cascade do |t|
+    t.string "name"
+    t.string "style"
+    t.float "net_wt"
+    t.string "milk_type"
+    t.boolean "veg_rennet"
+    t.boolean "raw"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "creamery_id"
+    t.index ["creamery_id"], name: "index_cheeses_on_creamery_id"
+  end
 
   create_table "creameries", force: :cascade do |t|
     t.string "name"
@@ -24,6 +37,9 @@ ActiveRecord::Schema.define(version: 2022_08_24_234624) do
     t.boolean "farmstead"
     t.integer "acreage"
     t.string "awards_won"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cheeses", "creameries"
 end

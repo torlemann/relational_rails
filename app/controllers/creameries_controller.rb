@@ -3,6 +3,10 @@ class CreameriesController < ApplicationController
         @creameries = Creamery.all
     end
 
+     def show
+        @creamery = Creamery.find(params[:id])
+    end
+
     def new
     end
 
@@ -21,10 +25,6 @@ class CreameriesController < ApplicationController
         creamery.save
 
         redirect_to'/creameries'
-    end
-
-    def show
-        @creamery = Creamery.find(params[:id])
     end
 
     def edit

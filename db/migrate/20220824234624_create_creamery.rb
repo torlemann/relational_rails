@@ -9,6 +9,8 @@ class CreateCreamery < ActiveRecord::Migration[5.2]
       t.boolean :farmstead
       t.integer :acreage
       t.string :awards_won
+
+      t.timestamps
     end
   end
 end
