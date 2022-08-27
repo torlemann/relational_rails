@@ -1,0 +1,8 @@
+<% @cheeses.each do |cheese| %>
+    <h5><%= cheese.name %></h5>
+    <h5>Style:</h5><%= cheese.style %><br>
+    <h5>Net Weight</h5> <%= cheese.net_wt %><br>
+    <h5>Milk Type</h5><%= cheese.milk_type %><br>
+    <h5>Vegetarian?</h5> <%= cheese.veg_rennet %><br>
+    <h5>Raw?</h5> <%= cheese.raw %><br>
+<% end %>
