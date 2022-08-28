@@ -18,5 +18,7 @@
 <p><%= @creamery.acreage %></p>
 <h3>Awards:</h3>
 <p><%= @creamery.awards_won %></p>
+<h3>Number of Cheeses Made:</h3>
+<p><%= @creamery.cheeses.count %></p>
 
 <a href='/creameries/<% @creamery.id %>/edit'>Edit</a>

@@ -1,11 +1,7 @@
 <h1>All Creameries</h1>
-
 <% @creameries.each do |creamery| %>
-    <h3><a href="/creameries/<%= creamery.id %>"><%= creamery.name %></a></h3>
-    <a href="/creameries/<%= creamery.id %>/edit">Edit</a>
-    <form action="/creameries/<%= creamery.id %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-  </form>
+  <h2><p><%= creamery.name %></p></h2>
+  <p><%= link_to "Update #{creamery.name}", "/creameries/#{creamery.id}/edit" %> </p>
+  <p><%= link_to "Delete #{creamery.name}", "/creameries/#{creamery.id}", id: "creamery-#{creamery.id}", method: :delete %></p>
+  <p>Created At: <%= creamery.created_at %></p>
 <% end %>
