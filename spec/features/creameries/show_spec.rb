@@ -25,6 +25,5 @@ RSpec.describe Creamery, type: :feature do
         expect(page).to have_link("Cheeses")
         click_link 'Cheeses'
         expect(current_path).to eq('/cheeses')
-      end
     end
 end
