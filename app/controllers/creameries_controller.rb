@@ -22,7 +22,7 @@ class CreameriesController < ApplicationController
             awards_won: params[:creamery][:awards_won]
         })
 
-        creamery.save
+        task.save
 
         redirect_to'/creameries'
     end
