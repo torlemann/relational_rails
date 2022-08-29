@@ -24,4 +24,13 @@ RSpec.describe "creamery's cheeses index" do
     expect(page).to have_content(cheese2.raw)
     expect(page).to_not have_content(cheese3.name)
   end
+
+  it "takes you back to creamery index" do
+    creamery = Creamery.create!(name: "Jasper Hill Farm", date_founded: 2000, owner: "Mateo and Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
+    cheese = creamery.cheeses.create!(name: "Winnimere", style: "washed", net_wt: 1.0, milk_type: "cow", veg_rennet: false, raw: true)
+    visit "/cheeses/#{cheese.id}"
+    expect(page).to have_link("Creamery Index")
+    click_link 'Creamery Index'
+    expect(current_path).to eq('/creameries')
+end
 end
