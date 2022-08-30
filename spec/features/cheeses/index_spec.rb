@@ -30,4 +30,5 @@ RSpec.describe 'cheese index' do
         click_link 'Creamery Index'
         expect(current_path).to eq('/creameries')
     end
+
 end

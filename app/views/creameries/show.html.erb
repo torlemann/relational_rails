@@ -1,6 +1,7 @@
 
 
 <a href="/creameries">Creamery Index</a>
+<%= link_to "#{@creamery.name}'s Cheeses", "/creameries/#{@creamery.id}/cheeses" %>
 
 <h3>Name:</h3>
 <p><%= @creamery.name %></p>
@@ -24,3 +25,4 @@
 <a href='/creameries/<% @creamery.id %>/edit'>Edit</a>
 
 <%= link_to 'Cheeses', "/cheeses" %>
+<%= link_to 'Creamery Index', "/creameries" %>
