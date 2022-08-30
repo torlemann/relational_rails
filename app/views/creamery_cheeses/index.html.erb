@@ -7,5 +7,6 @@
     <h5>Raw?</h5> <%= cheese.raw %><br>
 <% end %>
 
+<%= link_to "Add a Cheese Variety", "/creameries/#{@creamery.id}/cheeses/new" %>
 <%= link_to 'Cheeses', "/cheeses" %>
 <%= link_to 'Creamery Index', "/creameries" %>
