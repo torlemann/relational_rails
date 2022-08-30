@@ -9,7 +9,7 @@ RSpec.describe "creamery's cheeses index" do
     cheese3 = creamery2.cheeses.create!(name: "Original Blue", style: "blue-veined", net_wt: 7.0, milk_type: "cow", veg_rennet: false, raw: true)
 
     visit "/creameries/#{creamery.id}/cheeses"
-    save_and_open_page
+    #save_and_open_page
     expect(page).to have_content(cheese.name)
     expect(page).to have_content(cheese.style)
     expect(page).to have_content(cheese.net_wt)
@@ -24,4 +24,32 @@ RSpec.describe "creamery's cheeses index" do
     expect(page).to have_content(cheese2.raw)
     expect(page).to_not have_content(cheese3.name)
   end
+
+  it "takes you back to creamery index" do
+    creamery = Creamery.create!(name: "Jasper Hill Farm", date_founded: 2000, owner: "Mateo and Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
+    cheese = creamery.cheeses.create!(name: "Winnimere", style: "washed", net_wt: 1.0, milk_type: "cow", veg_rennet: false, raw: true)
+    visit "/cheeses/#{cheese.id}"
+    expect(page).to have_link("Creamery Index")
+    click_link 'Creamery Index'
+    expect(current_path).to eq('/creameries')
+  end
+
+  it "can add a cheese to creamery's cheese index" do
+    creamery = Creamery.create!(name: "Jasper Hill Farm", date_founded: 2000, owner: "Mateo and Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
+    cheese = creamery.cheeses.create!(name: "Winnimere", style: "washed", net_wt: 1.0, milk_type: "cow", veg_rennet: false, raw: true)
+    visit "/creameries/#{creamery.id}/cheeses"
+    expect(page).to have_link("Add a Cheese Variety")
+    click_link 'Add a Cheese Variety'
+    expect(current_path).to eq("/creameries/#{creamery.id}/cheeses/new")
+    fill_in('name', with: "Winnimere")
+    fill_in('style', with: "washed")
+    fill_in('net_wt', with: 1.0)
+    fill_in('milk_type', with: "cow")
+    fill_in('veg_rennet', with: false)
+    fill_in('raw', with: true)
+    click_button 'Add Cheese'
+    expect(current_path).to eq("/creameries/#{creamery.id}/cheeses")
+    expect(page).to have_content("Winnimere")
+  end
+
 end

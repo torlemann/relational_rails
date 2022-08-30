@@ -1,0 +1,17 @@
+<form action="/creameries/<%= @creamery.id %>/cheeses" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <h3>Add a cheese to the gallery:</h3>
+    <p>Name:</p>
+    <input type='text' name='name'/><br/>
+    <p>Style:</p>
+    <input type='text' name='style'/><br/>
+    <p>Net Weight:</p>
+    <input type='text' name='net_wt'/><br/>
+    <p>Milk type:</p>
+    <input type='text' name='milk_type'/><br/>
+    <p>Is it made with vegetarian rennet?</p>
+    <input type='text' name='veg_rennet'/><br/>
+    <p>Is it raw milk?</p>
+    <input type='text' name='raw'/><br/>
+    <input type='submit' name='Add Cheese'/>
+</form>

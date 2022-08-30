@@ -11,18 +11,16 @@ class CreameriesController < ApplicationController
     end
 
     def create
-        task = Creamery.create!({
-            name: params[:creamery][:name],
-            date_founded: params[:creamery][:date_founded],
-            owner: params[:creamery][:owner],
-            head_cheesemaker: params[:creamery][:head_cheesemaker],
-            location: params[:creamery][:location],
-            farmstead: params[:creamery][:farmstead],
-            acreage: params[:creamery][:acreage],
-            awards_won: params[:creamery][:awards_won]
-        })
-
-        task.save
+        Creamery.create!(
+            name: params[:name],
+            date_founded: 0,
+            owner: params[:owner],
+            head_cheesemaker: params[:head_cheesemaker],
+            location: params[:location],
+            farmstead: true,
+            acreage: 0,
+            awards_won: params[:awards_won]
+        )
 
         redirect_to'/creameries'
     end
@@ -33,17 +31,16 @@ class CreameriesController < ApplicationController
 
     def update
         creamery = Creamery.find(params[:id])
-        creamery.update({
-            name: params[:creamery][:name],
-            date_founded: params[:creamery][:date_founded],
-            owner: params[:creamery][:owner],
-            head_cheesemaker: params[:creamery][:head_cheesemaker],
-            location: params[:creamery][:location],
-            farmstead: params[:creamery][:farmstead],
-            acreage: params[:creamery][:acreage],
-            awards_won: params[:creamery][:awards_won]
-        })
-        creamery.save
+        creamery.update(
+            name: params[:name],
+            date_founded: params[:date_founded],
+            owner: params[:owner],
+            head_cheesemaker: params[:head_cheesemaker],
+            location: params[:location],
+            farmstead: params[:farmstead],
+            acreage: params[:acreage],
+            awards_won: params[:awards_won]
+        )
         redirect_to "/creameries/#{creamery.id}"
     end
 
