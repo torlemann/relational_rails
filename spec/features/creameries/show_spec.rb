@@ -62,6 +62,5 @@ RSpec.describe Creamery, type: :feature do
         click_button 'Update Creamery'
         expect(current_path).to eq("/creameries/#{creamery.id}")
         expect(page).to have_content("Taryn")
-        save_and_open_page
     end
 end

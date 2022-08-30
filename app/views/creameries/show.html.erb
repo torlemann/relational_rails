@@ -22,7 +22,7 @@
 <h3>Number of Cheeses Made:</h3>
 <p><%= @creamery.cheeses.count %></p>
 
-<a href='/creameries/<% @creamery.id %>/edit'>Edit</a>
+<%= link_to "Update #{@creamery.name}", "/creameries/#{@creamery.id}/edit" %>
 
 <%= link_to 'Cheeses', "/cheeses" %>
 <%= link_to 'Creamery Index', "/creameries" %>
