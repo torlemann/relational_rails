@@ -20,7 +20,7 @@ RSpec.describe Cheese, type: :model do
             cheese = creamery.cheeses.create!(name: "Winnimere", style: "washed", net_wt: 1.0, milk_type: "cow", veg_rennet: false, raw: true)
             cheese2 = creamery.cheeses.create!(name: "Bayley Hazen Blue", style: "blue-veined", net_wt: 7.0, milk_type: "cow", veg_rennet: true, raw: true)
 
-            expect(Cheese.alpha).to eq([cheese2, cheese])
+            expect(Cheese.alphabetize).to eq([cheese2, cheese])
         end
     end
 end

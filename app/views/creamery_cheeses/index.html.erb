@@ -6,7 +6,7 @@
     <h5>Vegetarian?</h5> <%= cheese.veg_rennet %><br>
     <h5>Raw?</h5> <%= cheese.raw %><br>
 <% end %>
-
+<%= link_to "Sort cheeses alphabetically", "/creameries/#{@creamery.id}/cheeses/?sort=name" %>
 <%= link_to "Add a Cheese Variety", "/creameries/#{@creamery.id}/cheeses/new" %>
 <%= link_to 'Cheeses', "/cheeses" %>
 <%= link_to 'Creamery Index', "/creameries" %>
