@@ -1,7 +1,11 @@
 class CreameryCheesesController < ApplicationController
     def index
         @creamery = Creamery.find(params[:creamery_id])
-        @cheeses = @creamery.cheeses
+        if params[:sort] == "name"
+            @cheeses = @creamery.cheeses.alphabetize
+        else
+            @cheeses = @creamery.cheeses
+        end
     end
 
     def new
