@@ -31,6 +31,4 @@ RSpec.describe 'cheese index' do
         expect(current_path).to eq('/creameries')
     end
 
-    it ''
-
 end
