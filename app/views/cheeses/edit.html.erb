@@ -1,0 +1,16 @@
+<h3>Edit the cheeses's attributes:</h3><br>
+<%= form_with url: "/cheeses/#{@cheese.id}", method: :patch, local: true do |form| %>
+    <p><%= form.label :name %>
+    <%= form.text_field :name %></p>
+    <p><%= form.label :style %>
+    <%= form.text_field :style %></p>
+    <p><%= form.label :net_wt %>
+    <%= form.text_field :net_wt %></p>
+    <p><%= form.label :milk_type %>
+    <%= form.text_field :milk_type %></p>
+    <p><%= form.label "Is it vegetarian?" %>
+    <%= form.text_field :veg_rennet %></p>
+    <p><%= form.label "Is it raw?" %>
+    <%= form.text_field :raw %></p>
+    <input type='submit' name='Update'/>
+<% end %>
