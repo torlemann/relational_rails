@@ -23,6 +23,7 @@
 <p><%= @creamery.cheeses.count %></p>
 
 <%= link_to "Update #{@creamery.name}", "/creameries/#{@creamery.id}/edit" %>
+<%= link_to "Delete #{@creamery.name}", "/creameries/#{@creamery.id}", method: :delete %>
 
 <%= link_to 'Cheeses', "/cheeses" %>
 <%= link_to 'Creamery Index', "/creameries" %>

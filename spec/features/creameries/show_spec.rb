@@ -72,5 +72,5 @@ RSpec.describe Creamery, type: :feature do
         click_link "Delete #{creamery.name}"
         expect(current_path).to eq ('/creameries')
         expect(page).to_not have_content("Jasper Hill Farm")
-      end
+    end
 end
