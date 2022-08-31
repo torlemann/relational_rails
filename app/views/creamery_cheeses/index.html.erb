@@ -6,6 +6,7 @@
     <h5>Vegetarian?</h5> <%= cheese.veg_rennet %><br>
     <h5>Raw?</h5> <%= cheese.raw %><br>
     <p><%= link_to "Update", "/cheeses/#{cheese.id}/edit" %> </p>
+    <%= link_to "Delete #{cheese.name}", "/cheeses/#{cheese.id}", id: "cheese-#{cheese.id}", method: :delete %>
 <% end %>
 <%= link_to "Sort cheeses alphabetically", "/creameries/#{@creamery.id}/cheeses/?sort=name" %>
 <%= link_to "Add a Cheese Variety", "/creameries/#{@creamery.id}/cheeses/new" %>

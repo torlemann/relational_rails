@@ -56,4 +56,16 @@ RSpec.describe 'the cheeses show page' do
         expect(current_path).to eq('/creameries')
     end
 
+    it "can delete from cheese's show page " do
+        Creamery.destroy_all
+        Cheese.destroy_all
+        creamery = Creamery.create!(name: "Jasper Hill Farm", date_founded: 2000, owner: "Mateo and Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
+        cheese = creamery.cheeses.create!(name: "Winnimere", style: "washed", net_wt: 1.0, milk_type: "cow", veg_rennet: false, raw: true)
+
+        visit "/cheeses/#{cheese.id}"
+        click_link "Delete #{cheese.name}"
+        expect(current_path).to eq ('/cheeses')
+        expect(page).to_not have_content("Winnimere")
+    end
+
 end
