@@ -7,3 +7,4 @@
 <h5>Milk Type</h5><%= @cheese.milk_type %><br>
 <h5>Vegetarian?</h5> <%= @cheese.veg_rennet %><br>
 <h5>Raw?</h5> <%= @cheese.raw %><br>
+<%= link_to "Delete #{@cheese.name}", "/cheeses/#{@cheese.id}", method: :delete %>
