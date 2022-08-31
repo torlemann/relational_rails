@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   
   get '/cheeses', to: 'cheeses#index'
   get '/cheeses/:id', to: 'cheeses#show'
+  get '/cheeses/:id/edit', to: 'cheeses#edit'
 end

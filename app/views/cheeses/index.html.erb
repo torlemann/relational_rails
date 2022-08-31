@@ -8,7 +8,7 @@
      <h5>Milk Type</h5><%= cheese.milk_type %><br>
      <h5>Vegetarian?</h5> <%= cheese.veg_rennet %><br>
       <h5>Raw?</h5> <%= cheese.raw %><br>
-    <a href="/cheeses/<%= cheese.id %>/edit">Edit</a><br>
+    <a href="/cheeses/<%= cheese.id %>/edit">Update</a><br>
     <form action="/cheeses/<%= cheese.id %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="DELETE">

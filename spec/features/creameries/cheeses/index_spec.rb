@@ -65,4 +65,12 @@ RSpec.describe "creamery's cheeses index" do
     save_and_open_page
   end
 
+  it "links to edit each cheese" do
+    creamery1 = Creamery.create!(name: "Jasper Hill Farm", date_founded: 2000, owner: "Mateo and Andy Kehler", head_cheesemaker: "Scott Harbour", location: "Vermont", farmstead: true, acreage: 100, awards_won: "All of them")
+    cheese1 = creamery1.cheeses.create!(name: "Winnimere", style: "washed", net_wt: 1.0, milk_type: "cow", veg_rennet: false, raw: true)
+    visit '/cheeses'
+    click_link "Update"
+    expect(current_path).to eq("/cheeses/#{cheese1.id}/edit")
+  end
+
 end

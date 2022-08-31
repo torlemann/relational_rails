@@ -5,6 +5,7 @@
     <h5>Milk Type</h5><%= cheese.milk_type %><br>
     <h5>Vegetarian?</h5> <%= cheese.veg_rennet %><br>
     <h5>Raw?</h5> <%= cheese.raw %><br>
+    <p><%= link_to "Update", "/creameries/#{cheese.id}/edit" %> </p>
 <% end %>
 <%= link_to "Sort cheeses alphabetically", "/creameries/#{@creamery.id}/cheeses/?sort=name" %>
 <%= link_to "Add a Cheese Variety", "/creameries/#{@creamery.id}/cheeses/new" %>
